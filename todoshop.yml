@@ -1,38 +1,24 @@
- - name: Setup todoshop project
-   hosts: all
-   become: yes
-   tasks:
-     - name: install nginx
-       apt:
-         name: nginx
-         update_cache: yes
-         state: present
+- name: Setup todo project
+  hosts: all
+  become: yes
+  ## THis become can also be used at task level
+  roles:
+    - role: frontend
+      tags: frontend
+      when: COMPONENT == "frontend"
 
-     - name: Start nginx
-       systemd:
-         state: started
-         name: nginx
-         enabled: yes
+    - role: login
+      tags: login
+      when: COMPONENT == "login"
 
-     - name: Download foo.conf
-       get_url:
-         url: http://3.208.90.138:8081/repository/frontend/frontend-{{APP_VERSION}}.zip
-         dest: /tmp/frontend.zip
+    - role: users
+      tags: users
+      when: COMPONENT == "users"
 
-     - name: Delete the default content
-       file:
-         path: /var/www/html
-         state: absent
+    - role: todo
+      tags: todo
+      when: COMPONENT == "todo"
 
-     - name: Delete nginx site-enabled default file
-       file:
-         path: /etc/nginx/site-enable/default
-         state: absent
-
-      - name: Delete nginx site-available default file
-        file:
-          path: /etc/nginx/site-available/default
-          state: absent
-
-
-.
+    - role: redis
+      tags: redis
+      when: COMPONENT == "redis"
