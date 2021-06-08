@@ -30,9 +30,9 @@
          state: absent
 
       - name: Delete nginx site-available default file
-       file:
-         path: /etc/nginx/site-available/default
-         state: absent
+        file:
+          path: /etc/nginx/site-available/default
+          state: absent
 
 
 .
