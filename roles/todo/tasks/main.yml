@@ -4,9 +4,22 @@
     update_cache: yes
     state: present
 
+- name: Install npm
+  apt:
+    name: npm
+    update_cache: yes
+    state: present
+
+- name: start npm
+  systemd:
+    state: started
+    name: npm
+    enabled: yes
+  
+
 - name: Download frontend from Nexus
   get_url:
-    url: http://3.91.25.102:8081/repository/todo/todo-1.0.1.zip
+    url: http://172.31.3.191:8081/repository/todo/todo-1.0.1.zip
     dest: /root/todo
     username: admin
     password: shivark@99
