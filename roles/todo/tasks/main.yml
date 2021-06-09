@@ -1,0 +1,32 @@
+- name: Install dependencies
+  apt:
+    name: npm
+    update_cache: yes
+    state: present
+
+- name: Download frontend from Nexus
+  get_url:
+    url: http://3.91.25.102:8081/repository/todo/todo-1.0.1.zip
+    dest: /root/todo
+    username: admin
+    password: shivark@99
+
+- name: Unzip the Downloaded Content
+  unarchive:
+    src: /root/todo.zip
+    dest: /root
+    remote_src: yes
+
+- name: Copy todos Service file
+  copy:
+    src: /root/todo.service
+    dest: /etc/systemd/system/todo.service
+    remote_src: yes
+
+- name: Start {{COMPONENT}} Service
+  systemd:
+    name: todo
+    daemon_reload: yes
+    state: started
+    enabled: yes
+
