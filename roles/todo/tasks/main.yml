@@ -13,7 +13,7 @@
 
 - name: Unzip the Downloaded Content
   unarchive:
-    src: /root/todo.zip
+    src: /root/todo
     dest: /root
     remote_src: yes
 
