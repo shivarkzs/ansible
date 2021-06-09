@@ -9,8 +9,7 @@
 
   #  - role: login
    #   tags: login
-    #  when: COMPONENT == "login"
-
+    #  when: COMPONENT 
     #- role: users
      # tags: users
       #when: COMPONENT == "users"
