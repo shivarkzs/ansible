@@ -1,6 +1,6 @@
 - name: Install dependencies
   apt:
-    name: npm
+    name: "{{packages}}"
     update_cache: yes
     state: present
 
