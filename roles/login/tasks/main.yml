@@ -1,13 +1,38 @@
-  
-[Unit]
+-  name: Install dependencies
+   
+- name: Install golang
+  apt:
+    name: golang
+    update_cache: yes
+    state: present
 
-Description = login Service
-[Service]
-Environment=AUTH_API_PORT=8080
-Environment=USERS_API_ADDRESS=http://user.shivarkzs:8080
-ExecStart=/root/login-ci
-SyslogIdentifier=login
- 
+- name: start golang
+  systemd:
+    state: started
+    name: golang
+    enabled: yes
+    
+- name: Download login  from Nexus
+  get_url:
+    url: http://172.31.88.67:8081/repository/login/login-1.0.1.zip 
+    dest: /root/login
+    username: admin
+    password: shivark@99
 
-[Install]
-WantedBy=multi-user.target
+- name: Unzip the Downloaded Content
+  unarchive:
+    src: /root/login
+    dest: /root/
+    remote_src: yes
+
+- name: Copy login.Service 
+  copy:
+    src: login.service
+    dest: /etc/systemd/system/login.service   
+
+- name: Start login Service
+  systemd:
+    name: "login"
+    daemon_reload: yes
+    state: started
+    enabled: yes
