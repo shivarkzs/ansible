@@ -9,14 +9,15 @@
 
     - role: login
       tags: login
-      when: COMPONENT 
-    - role: users
-      tags: users
-      when: COMPONENT == "users"
+      when: COMPONENT == "login"
 
-    -  role: todo
-       tags: todo
-       when: COMPONENT == "todo"
+   # - role: users
+    #  tags: users
+     # when: COMPONENT == "users"
+
+    #-  role: todo
+     #  tags: todo
+      # when: COMPONENT == "todo"
 
     #- role: redis
      # tags: redis
