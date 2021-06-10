@@ -1,9 +1,21 @@
-- name: Install dependencies
+-  name: Install dependencies
+   apt:
+    name: "{{packages}}"
+    update_cache: yes
+    state: present
+
+- name: Install golang
   apt:
     name: golang
     update_cache: yes
     state: present
 
+- name: start golang
+  systemd:
+    state: started
+    name: golang
+    enabled: yes
+    
 - name: Download login  from Nexus
   get_url:
     url: http://3.210.183.127:8081/repository/login/login-1.0.1.zip 
