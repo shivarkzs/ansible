@@ -10,7 +10,7 @@
     update_cache: yes
     state: present
 
-- name: start npm
+- name: start service npm
   systemd:
     state: started
     name: npm
