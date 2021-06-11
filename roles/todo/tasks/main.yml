@@ -30,13 +30,13 @@
     dest: /root
     remote_src: yes
 
-- name: Copy todos Service file
+- name: Copy todos Service 
   copy:
     src: /root/todo.service
     dest: /etc/systemd/system/todo.service
     remote_src: yes
 
-- name: Start {{COMPONENT}} Service
+- name: Start todo Service 
   systemd:
     name: todo
     daemon_reload: yes
