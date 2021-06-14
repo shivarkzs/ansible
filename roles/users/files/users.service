@@ -8,7 +8,7 @@ Environment=AUTH_API_ADDRESS=http://login.shivark.online:8080
 Environment=AUTH_API_PORT=8080
 ExecStart=/bin/java -jar /root/users.jar
 
-SyslogIdentifier=users
+SyslogIdentifier=user
 
 [Install]
 WantedBy=multi-user.target
