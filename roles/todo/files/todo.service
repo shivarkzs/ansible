@@ -6,7 +6,6 @@ Environment=ZIPKIN_URL=
 Environment=REDIS_HOST=http://redis.shivark.online:8080
 Environment=TODOS_API_PORT=8080
 ExecStart=/bin/node /root/todo/server.js
-Restart=on-failure
 SyslogIdentifier=login
 
 [Install]
