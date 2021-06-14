@@ -2,7 +2,7 @@
 Description = todo Service
 [Service]
 
-Environment=REDIS_HOST=http://REDIS_ENDPOINT:8080
+Environment=REDIS_HOST=http://shivark.online:8080
 Environment=TODOS_API_PORT=8080
 ExecStart=bin/node /root/todo/server.js
 Restart=on-failure
