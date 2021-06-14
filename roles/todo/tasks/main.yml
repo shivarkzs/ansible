@@ -19,7 +19,7 @@
 
 - name: Copy todos Service 
   copy:
-    src: /root/ANSIBLE-1/roles/todo/files/todo.service
+    src: /root/ansible/roles/todo/files/todo.service
     dest: /etc/systemd/system/todo.service
     remote_src: yes
 
