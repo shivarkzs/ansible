@@ -54,7 +54,7 @@
     regexp: '127.0.0.2'
     replace: 'todo.shivark.online'
 
-- name: To start npm
+- name: start npm
   shell: npm start
   args:
     chdir: /root/
