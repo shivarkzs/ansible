@@ -1,7 +1,0 @@
-- name: Setup roboshop project
-  hosts: all
-  become: yes
-  ## THis become can also be used at task level
-  roles:
-    - frontend
-     - mongodb
