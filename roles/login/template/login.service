@@ -3,8 +3,8 @@
 Description = login Service
 [Service]
 Environment=AUTH_API_PORT=8080
-Environment=USERS_API_ADDRESS=http://user.shivark.online:8080
-ExecStart=/root/login-ci@2
+Environment=USERS_API_ADDRESS=http://users-{{ENV}}.shivark.online:8080
+ExecStart=/home/ubuntu/login/login-ci
 SyslogIdentifier=login
  
 

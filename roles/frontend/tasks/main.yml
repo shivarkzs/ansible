@@ -6,10 +6,10 @@
 
 - name: Download Frontend from Nexus
   get_url:
-    url: http://:8081/repository/frontend/frontend-{{APP_VERSION}}.zip
+    url: http://172.31.3.191:8081/repository/frontend/frontend-{{APP_VERSION}}.zip
     dest: /tmp/frontend.zip
     username: admin
-    password: momdad007
+    password: shivark@99
 
 - name: Delete the default content
   file:
