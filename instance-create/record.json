@@ -3,7 +3,7 @@
   "Changes": [{
     "Action": "UPSERT",
     "ResourceRecordSet": {
-      "Name": "COMPONENT.shivark.online",
+      "Name": "COMPONENT.shivazs.ml",
       "Type": "A",
       "TTL": 300,
       "ResourceRecords": [{ "Value": "IPADDRESS"}]
