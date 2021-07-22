@@ -6,7 +6,7 @@ Environment=REDIS_HOST=http://redis-{{ENV}}.shivazs.ml:8080
 Environment=TODOS_API_PORT=8080
 ExecStart=/bin/node /home/ubuntu/todo/server.js
 Restart=on-failure
-SyslogIdentifier=todo
+SyslogIdentifier=login
 
 [Install]
 WantedBy=multi-user.target
